@@ -19,6 +19,10 @@ pub fn reset_player_position(
         return;
     };
 
+    if q_start_flag.is_empty() {
+        return;
+    }
+
     if ev_kill_events.is_empty() {
         return;
     }
@@ -26,6 +30,7 @@ pub fn reset_player_position(
 
     // Trigger level switch to reset the beams and stuff
     ev_level_switch.send(LevelSwitchEvent);
+
 
     for (flag, instance) in q_start_flag.iter() {
         if current_level.0 == flag.level_iid {

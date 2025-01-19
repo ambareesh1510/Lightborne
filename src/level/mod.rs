@@ -28,7 +28,7 @@ impl Plugin for LevelManagementPlugin {
             .add_plugins(ActivatablePlugin)
             .add_plugins(CrystalPlugin)
             .add_event::<LevelSwitchEvent>()
-            .init_resource::<CurrentLevel>()
+            // .init_resource::<CurrentLevel>()
             .insert_resource(LdtkSettings {
                 level_spawn_behavior: LevelSpawnBehavior::UseWorldTranslation {
                     load_level_neighbors: true,
@@ -88,7 +88,6 @@ fn switch_level(
         );
 
         if world_box.contains(player_box.center()) {
-            // ev_move_camera.send(MoveCameraEvent(world_box.center()));
             if current_level.0 != level_iid.as_str() {
                 ev_move_camera.send(MoveCameraEvent(world_box.center()));
                 ev_level_switch.send(LevelSwitchEvent);

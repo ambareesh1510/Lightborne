@@ -12,7 +12,7 @@ use light::{handle_color_switch, preview_light_path, shoot_light, PlayerLightInv
 use movement::{move_player, queue_jump, PlayerMovement};
 use spawn::{add_player_sensors, init_player_bundle};
 
-mod kill;
+pub mod kill;
 pub mod light;
 pub mod movement;
 mod spawn;

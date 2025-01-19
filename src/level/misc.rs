@@ -25,7 +25,6 @@ pub struct StartFlag {
 
 #[derive(Default, Bundle, LdtkEntity)]
 pub struct StartFlagBundle {
-    flag: StartFlag,
     marker: StartMarker,
     #[from_entity_instance]
     instance: EntityInstance,
